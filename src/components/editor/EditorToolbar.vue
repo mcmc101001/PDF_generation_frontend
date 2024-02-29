@@ -97,6 +97,38 @@
       ordered list
     </Button>
     <Button
+      @click="editor.chain().focus().setTextAlign('left').run()"
+      :variant="
+        editor.isActive({ textAlign: 'left' }) ? 'selected' : 'unselected'
+      "
+    >
+      alignLeft
+    </Button>
+    <Button
+      @click="editor.chain().focus().setTextAlign('center').run()"
+      :variant="
+        editor.isActive({ textAlign: 'center' }) ? 'selected' : 'unselected'
+      "
+    >
+      alignCenter
+    </Button>
+    <Button
+      @click="editor.chain().focus().setTextAlign('right').run()"
+      :variant="
+        editor.isActive({ textAlign: 'right' }) ? 'selected' : 'unselected'
+      "
+    >
+      alignRight
+    </Button>
+    <!-- <Button
+      @click="editor.chain().focus().setTextAlign('justify').run()"
+      :variant="
+        editor.isActive({ textAlign: 'justify' }) ? 'selected' : 'unselected'
+      "
+    >
+      alignJustify
+    </Button> -->
+    <Button
       variant="unselected"
       @click="editor.chain().focus().undo().run()"
       :disabled="!editor.can().chain().focus().undo().run()"

@@ -1,6 +1,7 @@
 <script setup lang="ts">
   import { useEditor, EditorContent } from "@tiptap/vue-3";
   import StarterKit from "@tiptap/starter-kit";
+  import TextAlign from "@tiptap/extension-text-align";
   import EditorToolbar from "@/components/editor/EditorToolbar.vue";
   import Button from "@/components/ui/button/Button.vue";
   import { getPDF } from "@/api/getPDF";
@@ -33,7 +34,14 @@
       `,
     autofocus: true,
     editable: true,
-    extensions: [StarterKit],
+    extensions: [
+      StarterKit,
+      TextAlign.configure({
+        types: ["heading", "paragraph"],
+        alignments: ["left", "center", "right", "justify"],
+        defaultAlignment: "left",
+      }),
+    ],
     editorProps: {
       attributes: {
         // apply max-w-full as prose applies max-width: 65ch

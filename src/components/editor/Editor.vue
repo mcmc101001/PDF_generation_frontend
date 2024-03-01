@@ -4,6 +4,7 @@
   import TextAlign from "@tiptap/extension-text-align";
   import EditorToolbar from "@/components/editor/EditorToolbar.vue";
   import Button from "@/components/ui/button/Button.vue";
+  import Image from "@/lib/tiptap_extensions/image";
   import { getPDF } from "@/api/getPDF";
   import { ref } from "vue";
 
@@ -19,7 +20,7 @@
         </p>
         <ul>
           <li>
-            That’s a bullet list with one …
+            <p style="text-align: center">That’s a bullet list with one …</p>
           </li>
           <li>
             … or two list items.
@@ -41,6 +42,7 @@
         alignments: ["left", "center", "right", "justify"],
         defaultAlignment: "left",
       }),
+      Image,
     ],
     editorProps: {
       attributes: {

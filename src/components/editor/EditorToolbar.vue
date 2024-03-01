@@ -142,5 +142,17 @@
     >
       redo
     </Button>
+    <Button
+      variant="unselected"
+      @click="
+        editor
+          .chain()
+          .focus()
+          .setImage({ src: 'https://source.unsplash.com/8xznAGy4HcY/800x400' })
+          .run()
+      "
+    >
+      addImage
+    </Button>
   </div>
 </template>

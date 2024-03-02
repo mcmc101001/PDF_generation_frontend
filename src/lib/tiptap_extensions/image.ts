@@ -74,7 +74,6 @@
 import { mergeAttributes, Node } from "@tiptap/core";
 
 export interface ImageOptions {
-  allowBase64: boolean;
   HTMLAttributes: Record<string, any>;
 }
 
@@ -100,7 +99,6 @@ const Image = Node.create<ImageOptions>({
   // default options
   addOptions() {
     return {
-      allowBase64: false,
       HTMLAttributes: {},
     };
   },
@@ -114,15 +112,9 @@ const Image = Node.create<ImageOptions>({
   addAttributes() {
     return {
       id: {
-        default: 1,
+        default: "1",
       },
       src: {
-        default: null,
-      },
-      alt: {
-        default: null,
-      },
-      title: {
         default: null,
       },
     };
